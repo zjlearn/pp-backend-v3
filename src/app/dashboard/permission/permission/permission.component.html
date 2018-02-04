@@ -1,3 +1,62 @@
-<p>
-  管理权限
-</p>
+<div class="container">
+  <app-navbar title="权限管理"></app-navbar>
+
+  <!--显示查询条件，以及操作面板-->
+  <div class="row">
+    <div>
+
+    </div>
+  </div>
+
+  <!--显示用户的表格-->
+  <div class="user-table">
+    <div class="example-header">
+      <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="过滤">
+      </mat-form-field>
+    </div>
+
+    <mat-table #table [dataSource]="dataSource" matSort>
+      <!-- Position Column -->
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 角色ID</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.id}}</mat-cell>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 角色名称</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.name}}</mat-cell>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="desc">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 描述</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.desc}}</mat-cell>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="updateTime">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>更新时间</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.updateTime}}</mat-cell>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="status">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 状态</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.status}}</mat-cell>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="action">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 操作</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.action}}</mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+
+
+</div>

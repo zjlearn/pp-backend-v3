@@ -1,0 +1,11 @@
+mat-table{
+  overflow-y: hidden;
+  position: static;
+}
+
+
+.user-table {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}

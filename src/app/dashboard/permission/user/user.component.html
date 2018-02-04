@@ -1,3 +1,73 @@
-<p>
-  管理用户
-</p>
+<div class="container">
+  <app-navbar title="用户管理"></app-navbar>
+
+  <!--显示查询条件，以及操作面板-->
+  <div class="row">
+    <div>
+
+    </div>
+  </div>
+
+  <!--显示用户的表格-->
+  <div class="user-table">
+    <div class="example-header">
+      <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="过滤">
+      </mat-form-field>
+    </div>
+
+    <mat-table #table [dataSource]="dataSource" matSort>
+      <!-- Position Column -->
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 用户ID</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.id}}</mat-cell>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 用户姓名</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.name}}</mat-cell>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 邮箱</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.name}}</mat-cell>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="firstLoginTime">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 首次登陆时间</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.firstLoginTime}}</mat-cell>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="lastLoginTime">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 上次登陆时间</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.lastLoginTime}}</mat-cell>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="role">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 角色</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.role}}</mat-cell>
+      </ng-container>
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="status">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 状态</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.status}}</mat-cell>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="action">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> 操作</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.action}}</mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+
+
+</div>

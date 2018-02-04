@@ -3,16 +3,17 @@ export const ROUTES = [
   {path: 'profile', title: '个人信息', icon: 'person', children: null},
   {
     path: '#process', id: 'process', title: '流程', icon: 'apps', children: [
-      {path: 'process/price-table', title: 'Price Table', icon: 'PT'},
-      {path: 'process/panels', title: 'Panels', icon: 'P'},
-      {path: 'process/wizard', title: 'Wizard', icon: 'W'},
+      {path: 'processes/my', title: '发起的流程', icon: 'PT'},
+      {path: 'processes/unhandled', title: '未处理的流程', icon: 'P'},
+      {path: 'processes/handled', title: '已处理的流程', icon: 'W'},
+      {path: 'processes/end', title: '已结束', icon: 'W'},
     ]
   },
   {
     path: '#permission', id: 'permission', title: '权限管理', icon: 'apps', children: [
-      {path: 'permission/user', title: '用户管理', icon: 'PT'},
-      {path: 'permission/role', title: '角色管理', icon: 'P'},
-      {path: 'permission/permission', title: '权限管理', icon: 'W'},
+      {path: 'permissions/user', title: '用户管理', icon: 'PT'},
+      {path: 'permissions/role', title: '角色管理', icon: 'P'},
+      {path: 'permissions/permission', title: '权限管理', icon: 'W'},
     ]
   },
   {path: 'notification', title: '通知', icon: 'notifications', children: null},

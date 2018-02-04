@@ -25,9 +25,13 @@ const routes: Routes = [
       {path: 'notification', component: NotificationComponent},
       {path: 'alert', component: SweetAlertComponent},
       {path: 'settings', component: SettingsComponent},
-      {path: 'permission/user', component: UserComponent},
-      {path: 'permission/role', component: RoleComponent},
-      {path: 'permission/permission', component: PermissionComponent}
+      {path: 'permissions/user', component: UserComponent},
+      {path: 'permissions/role', component: RoleComponent},
+      {path: 'permissions/permission', component: PermissionComponent},
+      {path: 'processes/my', component: PermissionComponent},
+      {path: 'processes/unhandled', component: PermissionComponent},
+      {path: 'processes/handled', component: PermissionComponent},
+      {path: 'processes/end', component: PermissionComponent},
     ]
   }
 ];
