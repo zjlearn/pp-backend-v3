@@ -13,6 +13,10 @@ import {SettingsComponent} from './dashboard/settings/settings.component';
 import {UserComponent} from './dashboard/permission/user/user.component';
 import {RoleComponent} from './dashboard/permission/role/role.component';
 import {PermissionComponent} from './dashboard/permission/permission/permission.component';
+import {MyProcessComponent} from './dashboard/process/my-process/my-process.component';
+import {UnhandledProcessComponent} from './dashboard/process/unhandled-process/unhandled-process.component';
+import {HandledProcessComponent} from './dashboard/process/handled-process/handled-process.component';
+import {EndProcessComponent} from './dashboard/process/end-process/end-process.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -28,10 +32,10 @@ const routes: Routes = [
       {path: 'permissions/user', component: UserComponent},
       {path: 'permissions/role', component: RoleComponent},
       {path: 'permissions/permission', component: PermissionComponent},
-      {path: 'processes/my', component: PermissionComponent},
-      {path: 'processes/unhandled', component: PermissionComponent},
-      {path: 'processes/handled', component: PermissionComponent},
-      {path: 'processes/end', component: PermissionComponent},
+      {path: 'processes/my', component: MyProcessComponent},
+      {path: 'processes/unhandled', component: UnhandledProcessComponent},
+      {path: 'processes/handled', component: HandledProcessComponent},
+      {path: 'processes/end', component: EndProcessComponent},
     ]
   }
 ];

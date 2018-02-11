@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {MatSort, MatTableDataSource} from '@angular/material';
+import {MatPaginatorIntl, MatSort, MatTableDataSource, PageEvent} from '@angular/material';
 
 @Component({
   selector: 'app-permission',
@@ -11,7 +11,20 @@ export class PermissionComponent implements OnInit {
   displayedColumns = ['id', 'name', 'desc', 'updateTime', 'status', 'action'];
   dataSource = new MatTableDataSource(PERMISSION_DATA);
 
+  length = 100;
+  pageSize = 10;
+  pageSizeOptions = [5, 10, 25, 100];
+
+  // MatPaginator Output
+  pageEvent: PageEvent;
+
   @ViewChild(MatSort) sort: MatSort;
+
+  constructor(matPaginatorIntl: MatPaginatorIntl) {
+    matPaginatorIntl.itemsPerPageLabel = '每页';
+    matPaginatorIntl.previousPageLabel = '前一页';
+    matPaginatorIntl.nextPageLabel = '下一页';
+  }
 
   ngOnInit(): void {
   }
@@ -22,6 +35,10 @@ export class PermissionComponent implements OnInit {
    */
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
+  }
+
+  setPageSizeOptions(setPageSizeOptionsInput: string) {
+    this.pageSizeOptions = setPageSizeOptionsInput.split(',').map(str => +str);
   }
 
   applyFilter(filterValue: string) {
@@ -35,8 +52,8 @@ export class PermissionComponent implements OnInit {
 export interface Permission {
   id: number;
   name: string;
-  desc: number;
-  updateTime: String;
+  desc: string;
+  updateTime: string;
   status: string;
   action: string;
 }

@@ -21,6 +21,10 @@ import { ImagecardComponent } from './shared/imagecard/imagecard.component';
 import { UserComponent } from './dashboard/permission/user/user.component';
 import { RoleComponent } from './dashboard/permission/role/role.component';
 import { PermissionComponent } from './dashboard/permission/permission/permission.component';
+import { UnhandledProcessComponent } from './dashboard/process/unhandled-process/unhandled-process.component';
+import { HandledProcessComponent } from './dashboard/process/handled-process/handled-process.component';
+import { MyProcessComponent } from './dashboard/process/my-process/my-process.component';
+import { EndProcessComponent } from './dashboard/process/end-process/end-process.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +44,11 @@ import { PermissionComponent } from './dashboard/permission/permission/permissio
     ImagecardComponent,
     UserComponent,
     RoleComponent,
-    PermissionComponent
+    PermissionComponent,
+    UnhandledProcessComponent,
+    HandledProcessComponent,
+    MyProcessComponent,
+    EndProcessComponent
   ],
   imports: [
     BrowserModule,

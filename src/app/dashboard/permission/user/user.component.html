@@ -1,12 +1,6 @@
 <div class="container">
   <app-navbar title="用户管理"></app-navbar>
 
-  <!--显示查询条件，以及操作面板-->
-  <div class="row">
-    <div>
-
-    </div>
-  </div>
 
   <!--显示用户的表格-->
   <div class="user-table">
@@ -68,6 +62,11 @@
       <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
     </mat-table>
   </div>
+  <mat-paginator [length]="length"
+                 [pageSize]="pageSize"
+                 [pageSizeOptions]="pageSizeOptions"
+                 (page)="pageEvent = $event" >
+  </mat-paginator>
 
 
 </div>
