@@ -7,6 +7,8 @@ export const ROUTES = [
       {path: 'processes/unhandled', title: '未处理的流程', icon: 'P'},
       {path: 'processes/handled', title: '已处理的流程', icon: 'W'},
       {path: 'processes/end', title: '已结束', icon: 'W'},
+      {path: 'processes/loan', title: '借款申请', icon: 'W'},
+      {path: 'processes/project', title: '项目', icon: 'W'},
     ]
   },
   {

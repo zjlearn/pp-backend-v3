@@ -25,6 +25,8 @@ import { UnhandledProcessComponent } from './dashboard/process/unhandled-process
 import { HandledProcessComponent } from './dashboard/process/handled-process/handled-process.component';
 import { MyProcessComponent } from './dashboard/process/my-process/my-process.component';
 import { EndProcessComponent } from './dashboard/process/end-process/end-process.component';
+import { LoanComponent } from './dashboard/process/loan/loan.component';
+import { ProjectComponent } from './dashboard/process/project/project.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,9 @@ import { EndProcessComponent } from './dashboard/process/end-process/end-process
     UnhandledProcessComponent,
     HandledProcessComponent,
     MyProcessComponent,
-    EndProcessComponent
+    EndProcessComponent,
+    LoanComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,
