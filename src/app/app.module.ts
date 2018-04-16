@@ -27,6 +27,13 @@ import { MyProcessComponent } from './dashboard/process/my-process/my-process.co
 import { EndProcessComponent } from './dashboard/process/end-process/end-process.component';
 import { LoanComponent } from './dashboard/process/loan/loan.component';
 import { ProjectComponent } from './dashboard/process/project/project.component';
+import { LogComponent } from './dashboard/log/log.component';
+import { SecondcheckComponent } from './dashboard/project/secondcheck/secondcheck.component';
+import { FirstCheckComponent } from './dashboard/project/first-check/first-check.component';
+import { TenderingComponent } from './dashboard/project/tendering/tendering.component';
+import { RepaymentComponent } from './dashboard/project/repayment/repayment.component';
+import { FinishedProjectComponent } from './dashboard/project/finished-project/finished-project.component';
+import {ProjectService} from './shared/service/ProjectService';
 
 @NgModule({
   declarations: [
@@ -52,14 +59,20 @@ import { ProjectComponent } from './dashboard/process/project/project.component'
     MyProcessComponent,
     EndProcessComponent,
     LoanComponent,
-    ProjectComponent
+    ProjectComponent,
+    LogComponent,
+    SecondcheckComponent,
+    FirstCheckComponent,
+    TenderingComponent,
+    RepaymentComponent,
+    FinishedProjectComponent
   ],
   imports: [
     BrowserModule,
     routing,
     MaterialModule
   ],
-  providers: [SettingsService],
+  providers: [SettingsService, ProjectService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,0 +1,66 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">标的</a></li>
+    <li class="breadcrumb-item active" aria-current="page">待初审</li>
+  </ol>
+</nav>
+
+<div class="shadow p-3 mb-5 bg-light rounded">
+  <form class="example-container">
+    <mat-form-field>
+      <input matInput placeholder="用户名">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="用户名">
+    </mat-form-field>
+  </form>
+</div>
+
+<div class="product-table">
+  <div class="example-header">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="关键字过滤">
+    </mat-form-field>
+  </div>
+
+  <mat-table #table [dataSource]="dataSource" matSort>
+    <!-- Position Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> 项目名</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.name}}</mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="rate">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> 收益率</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.rate}}</mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="duration">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> 期限</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.duration}}</mat-cell>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="amount">
+      <mat-header-cell *matHeaderCellDef> 金额</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.amount}}</mat-cell>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="completed">
+      <mat-header-cell *matHeaderCellDef> 进度</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.completed}}</mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="operation">
+      <mat-header-cell *matHeaderCellDef> 操作</mat-header-cell>
+      <mat-cell *matCellDef="let element"> <a >查看</a></mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
