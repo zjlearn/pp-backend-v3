@@ -25,39 +25,44 @@
 
   <mat-table #table [dataSource]="dataSource" matSort>
     <!-- Position Column -->
-    <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef> 项目名</mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.name}}</mat-cell>
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.id}}</mat-cell>
     </ng-container>
 
     <!-- Name Column -->
-    <ng-container matColumnDef="rate">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> 收益率</mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.rate}}</mat-cell>
+    <ng-container matColumnDef="projectNo">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>项目编号</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.projectNo}}</mat-cell>
     </ng-container>
 
     <!-- Weight Column -->
-    <ng-container matColumnDef="duration">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> 期限</mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.duration}}</mat-cell>
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>姓名</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.name}}</mat-cell>
     </ng-container>
 
     <!-- Symbol Column -->
     <ng-container matColumnDef="amount">
-      <mat-header-cell *matHeaderCellDef> 金额</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef>金额</mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.amount}}</mat-cell>
     </ng-container>
 
     <!-- Symbol Column -->
-    <ng-container matColumnDef="completed">
-      <mat-header-cell *matHeaderCellDef> 进度</mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.completed}}</mat-cell>
+    <ng-container matColumnDef="duration">
+      <mat-header-cell *matHeaderCellDef>借款期限</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.duration}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="createTime">
+      <mat-header-cell *matHeaderCellDef>申请时间</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.duration}}</mat-cell>
     </ng-container>
 
 
     <ng-container matColumnDef="operation">
       <mat-header-cell *matHeaderCellDef> 操作</mat-header-cell>
-      <mat-cell *matCellDef="let element"> <a >查看</a></mat-cell>
+      <mat-cell *matCellDef="let element"><a>查看</a></mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

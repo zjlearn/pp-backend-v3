@@ -34,6 +34,9 @@ import { TenderingComponent } from './dashboard/project/tendering/tendering.comp
 import { RepaymentComponent } from './dashboard/project/repayment/repayment.component';
 import { FinishedProjectComponent } from './dashboard/project/finished-project/finished-project.component';
 import {ProjectService} from './shared/service/ProjectService';
+import { ProjectDetailComponent } from './dashboard/project/project-detail/project-detail.component';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {HttpModule} from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -65,14 +68,16 @@ import {ProjectService} from './shared/service/ProjectService';
     FirstCheckComponent,
     TenderingComponent,
     RepaymentComponent,
-    FinishedProjectComponent
+    FinishedProjectComponent,
+    ProjectDetailComponent
   ],
   imports: [
     BrowserModule,
     routing,
-    MaterialModule
+    HttpClientModule,
+    MaterialModule,
   ],
-  providers: [SettingsService, ProjectService],
+  providers: [SettingsService, ProjectService, HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule {

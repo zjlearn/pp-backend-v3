@@ -13,7 +13,7 @@ export class ProjectService {
   }
 
   getProjects(): Project[] {
-    return this.http.get<Result>('http://localhost:4200/xhr/user/currentUser').map<Result, User>(result => result.data);
+    return null;
   }
 
   getProjectsByCond(type: number, status: number, durationLowBound: number, durationUpBound: number,
