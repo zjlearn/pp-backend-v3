@@ -45,3 +45,10 @@
   transition: all 500ms;
 }
 
+/*对于内容主面单设置的css样式*/
+
+
+.main-panel .g-mn {
+  padding: 20px 38px 0;
+  color: #333;
+}

@@ -2,11 +2,22 @@ export const ROUTES = [
   {path: '/dashboard', title: '面板', icon: 'dashboard', children: null},
   {path: 'profile', title: '个人信息', icon: 'person', children: null},
   {
+    path: '#project', id: 'project', title: '标的', icon: 'apps', children: [
+      {path: 'project/firstCheck', title: '待初审', icon: 'PT'},
+      {path: 'project/secondCheck', title: '待复审', icon: 'P'},
+      {path: 'project/tendering', title: '招标中', icon: 'W'},
+      {path: 'project/repay', title: '还款中', icon: 'W'},
+      {path: 'project/finished', title: '已结束', icon: 'W'}
+    ]
+  },
+  {
     path: '#process', id: 'process', title: '流程', icon: 'apps', children: [
       {path: 'processes/my', title: '发起的流程', icon: 'PT'},
       {path: 'processes/unhandled', title: '未处理的流程', icon: 'P'},
       {path: 'processes/handled', title: '已处理的流程', icon: 'W'},
       {path: 'processes/end', title: '已结束', icon: 'W'},
+      {path: 'processes/loan', title: '借款申请', icon: 'W'},
+      {path: 'processes/project', title: '项目', icon: 'W'},
     ]
   },
   {

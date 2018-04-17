@@ -1,0 +1,12 @@
+{
+  "/xhr": {
+    "target": "http://ruwafs.natappfree.cc",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/p2p-dep/gateway.htm" :{
+    "target" : "http://113.207.54.122:8011",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

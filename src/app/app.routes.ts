@@ -17,6 +17,13 @@ import {MyProcessComponent} from './dashboard/process/my-process/my-process.comp
 import {UnhandledProcessComponent} from './dashboard/process/unhandled-process/unhandled-process.component';
 import {HandledProcessComponent} from './dashboard/process/handled-process/handled-process.component';
 import {EndProcessComponent} from './dashboard/process/end-process/end-process.component';
+import {LoanComponent} from './dashboard/process/loan/loan.component';
+import {ProjectComponent} from './dashboard/process/project/project.component';
+import {FinishedProjectComponent} from './dashboard/project/finished-project/finished-project.component';
+import {RepaymentComponent} from './dashboard/project/repayment/repayment.component';
+import {TenderingComponent} from './dashboard/project/tendering/tendering.component';
+import {SecondcheckComponent} from './dashboard/project/secondcheck/secondcheck.component';
+import {FirstCheckComponent} from './dashboard/project/first-check/first-check.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -36,6 +43,13 @@ const routes: Routes = [
       {path: 'processes/unhandled', component: UnhandledProcessComponent},
       {path: 'processes/handled', component: HandledProcessComponent},
       {path: 'processes/end', component: EndProcessComponent},
+      {path: 'processes/loan', component: LoanComponent},
+      {path: 'processes/project', component: ProjectComponent},
+      {path: 'project/firstCheck', component: FirstCheckComponent},
+      {path: 'project/secondCheck', component: SecondcheckComponent},
+      {path: 'project/tendering', component: TenderingComponent},
+      {path: 'project/repay', component: RepaymentComponent},
+      {path: 'project/finished', component: FinishedProjectComponent}
     ]
   }
 ];
