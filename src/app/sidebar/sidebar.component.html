@@ -24,8 +24,8 @@
             <span>{{menuItem.title}}</span>
             <b class="caret" [style.color]="normalFontColor"></b>
           </a>
-          <!--权限管理对应的模块-->
-          <div id="permission" class="collapse" [id]="[menuItem.id]">
+          <!--相对应的子组件-->
+          <div class="collapse" [id]="[menuItem.id]">
             <ul class="nav">
               <li *ngFor="let subItem of menuItem.children" routerLinkActive #subrla="routerLinkActive"
                   [ngClass]="subrla.isActive? 'active' : ''">
@@ -38,7 +38,6 @@
               </li>
             </ul>
           </div>
-          <!--通知公告对应的导航-->
         </div>
       </li>
     </ul>
