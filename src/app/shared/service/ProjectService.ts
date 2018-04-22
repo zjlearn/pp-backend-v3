@@ -1,7 +1,8 @@
+///<reference path="../model/Project.ts"/>
 import {Injectable} from '@angular/core';
 import {Project} from '../model/Project';
 import {HttpClient} from '@angular/common/http';
-import {Result} from '../model/Result';
+import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class ProjectService {
@@ -13,6 +14,10 @@ export class ProjectService {
   }
 
   getProjects(): Project[] {
+    return projects;
+  }
+
+  getProject(id: number): Observable<Project> {
     return null;
   }
 
@@ -20,6 +25,8 @@ export class ProjectService {
                     pageIndex: number, pageSize: number): Project[] {
     return null;
   }
+
+
 }
 
-
+const projects = [new Project(1, 'No2', '贷款', 1, 1, 1)];

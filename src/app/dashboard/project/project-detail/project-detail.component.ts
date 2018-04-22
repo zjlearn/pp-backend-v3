@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {ProjectService} from '../../../shared/service/ProjectService';
+import {Project} from '../../../shared/model/Project';
 
 
 @Component({
@@ -9,9 +12,20 @@ import { Component, OnInit } from '@angular/core';
 // 项目详情信息
 export class ProjectDetailComponent implements OnInit {
 
-  constructor() { }
+  project: Project;
 
-  ngOnInit() {
+  constructor(private route: ActivatedRoute,
+              private projectService: ProjectService,
+              private location: Location) {
   }
 
+  ngOnInit() {
+    this.getProject();
+  }
+
+  getProject(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.projectService.getProject(id)
+      .subscribe(project => this.project = project);
+  }
 }

@@ -12,11 +12,18 @@
 .mat-header-cell.mat-sort-header-sorted {
   color: black;
 }
+
 .mat-column-select {
   overflow: initial;
 }
 
-.filter-section .filter{
+.filter-section{
+  background-color: #FFFFFF;
+
+}
+
+.filter-section .filter {
   width: 100px;
   margin-right: 50px;
+  margin-left: 20px;
 }

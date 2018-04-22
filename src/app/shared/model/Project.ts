@@ -15,4 +15,14 @@ export class Project {
   public remainder: number;
   public status: number;
   public createTime: number;
+
+
+  constructor(id: number, projectName: string, projectNo: string, projectType: number, amount: number, duration: number) {
+    this.id = id;
+    this.projectName = projectName;
+    this.projectNo = projectNo;
+    this.projectType = projectType;
+    this.amount = amount;
+    this.duration = duration;
+  }
 }
