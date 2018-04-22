@@ -15,7 +15,8 @@
 .mat-column-select {
   overflow: initial;
 }
-.example-header {
-  min-height: 64px;
-  padding: 8px 24px 0;
+
+.filter-section .filter{
+  width: 100px;
+  margin-right: 50px;
 }
