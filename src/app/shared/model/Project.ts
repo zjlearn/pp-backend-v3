@@ -1,5 +1,7 @@
 export class Project {
   public id: number;
+  public userId: number;
+  public userName: String;
   public projectName: string;
   public projectNo: string;
   public projectType: number;  // 收益率
@@ -15,4 +17,15 @@ export class Project {
   public remainder: number;
   public status: number;
   public createTime: number;
+
+
+  constructor(id: number, userName: String, projectName: string, projectNo: string, amount: number, duration: number, createTime: number) {
+    this.id = id;
+    this.userName = userName;
+    this.projectName = projectName;
+    this.projectNo = projectNo;
+    this.amount = amount;
+    this.duration = duration;
+    this.createTime = createTime;
+  }
 }

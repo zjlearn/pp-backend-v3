@@ -13,7 +13,7 @@ export class ProjectService {
   }
 
   getProjects(): Project[] {
-    return null;
+    return projects;
   }
 
   getProjectsByCond(type: number, status: number, durationLowBound: number, durationUpBound: number,
@@ -21,5 +21,10 @@ export class ProjectService {
     return null;
   }
 }
+
+export const projects = [
+  new Project(1, 'zj', '信用贷', 'pxssf342', 432543, 12, 3242342)
+]
+;
 
 

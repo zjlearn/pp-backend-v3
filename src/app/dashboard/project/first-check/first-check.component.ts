@@ -10,7 +10,7 @@ import {Project} from '../../../shared/model/Project';
 })
 export class FirstCheckComponent implements OnInit {
   products: Project[];
-  displayedColumns = ['id', 'projectNo', 'name', 'amount', 'duration', 'createTime',  'operation'];
+  displayedColumns = ['id', 'projectNo', 'userName', 'amount', 'duration', 'createTime',  'operation'];
   dataSource;
   @ViewChild(MatSort) sort: MatSort;
 
