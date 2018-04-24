@@ -17,26 +17,28 @@ import {RootComponent} from './dashboard/root/root.component';
 import {SettingsComponent} from './dashboard/settings/settings.component';
 import {SweetAlertComponent} from './dashboard/sweet-alert/sweet-alert.component';
 import {SettingsService} from './services/settings.service';
-import { ImagecardComponent } from './shared/imagecard/imagecard.component';
-import { UserComponent } from './dashboard/permission/user/user.component';
-import { RoleComponent } from './dashboard/permission/role/role.component';
-import { PermissionComponent } from './dashboard/permission/permission/permission.component';
-import { UnhandledProcessComponent } from './dashboard/process/unhandled-process/unhandled-process.component';
-import { HandledProcessComponent } from './dashboard/process/handled-process/handled-process.component';
-import { MyProcessComponent } from './dashboard/process/my-process/my-process.component';
-import { EndProcessComponent } from './dashboard/process/end-process/end-process.component';
-import { LoanComponent } from './dashboard/process/loan/loan.component';
-import { ProjectComponent } from './dashboard/process/project/project.component';
-import { LogComponent } from './dashboard/log/log.component';
-import { SecondcheckComponent } from './dashboard/project/secondcheck/secondcheck.component';
-import { FirstCheckComponent } from './dashboard/project/first-check/first-check.component';
-import { TenderingComponent } from './dashboard/project/tendering/tendering.component';
-import { RepaymentComponent } from './dashboard/project/repayment/repayment.component';
-import { FinishedProjectComponent } from './dashboard/project/finished-project/finished-project.component';
+import {ImagecardComponent} from './shared/imagecard/imagecard.component';
+import {UserComponent} from './dashboard/permission/user/user.component';
+import {RoleComponent} from './dashboard/permission/role/role.component';
+import {PermissionComponent} from './dashboard/permission/permission/permission.component';
+import {UnhandledProcessComponent} from './dashboard/process/unhandled-process/unhandled-process.component';
+import {HandledProcessComponent} from './dashboard/process/handled-process/handled-process.component';
+import {MyProcessComponent} from './dashboard/process/my-process/my-process.component';
+import {EndProcessComponent} from './dashboard/process/end-process/end-process.component';
+import {LoanComponent} from './dashboard/process/loan/loan.component';
+import {ProjectComponent} from './dashboard/process/project/project.component';
+import {LogComponent} from './dashboard/log/log.component';
+import {SecondcheckComponent} from './dashboard/project/secondcheck/secondcheck.component';
+import {FirstCheckComponent} from './dashboard/project/first-check/first-check.component';
+import {TenderingComponent} from './dashboard/project/tendering/tendering.component';
+import {RepaymentComponent} from './dashboard/project/repayment/repayment.component';
+import {FinishedProjectComponent} from './dashboard/project/finished-project/finished-project.component';
 import {ProjectService} from './shared/service/ProjectService';
-import { ProjectDetailComponent } from './dashboard/project/project-detail/project-detail.component';
+import {ProjectDetailComponent} from './dashboard/project/project-detail/project-detail.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {HttpModule} from '@angular/http';
+import {DialogImageComponent} from './shared/dialog-image/dialog-image.component';
+import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialog} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -69,7 +71,8 @@ import {HttpModule} from '@angular/http';
     TenderingComponent,
     RepaymentComponent,
     FinishedProjectComponent,
-    ProjectDetailComponent
+    ProjectDetailComponent,
+    DialogImageComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +80,11 @@ import {HttpModule} from '@angular/http';
     HttpClientModule,
     MaterialModule,
   ],
-  providers: [SettingsService, ProjectService, HttpClient],
+  entryComponents: [DialogImageComponent],
+  providers: [SettingsService, ProjectService, HttpClient,
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}},
+    MatDialog
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

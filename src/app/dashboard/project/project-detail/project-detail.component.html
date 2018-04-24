@@ -107,9 +107,15 @@
         </div>
         <p>证明照片: </p>
         <div>
-          <img src=""  alt="身份证">
-          <img src="" alt="信用证明">
-          <img src="学历证明">
+          <a (click)="openDialog()">
+            <img src="" alt="身份证">
+          </a>
+          <a (click)="openDialog()">
+            <img src="" alt="信用证明">
+          </a>
+          <a (onclick)="openDialog()">
+            <img src="学历证明">
+          </a>
         </div>
       </div>
     </mat-card-content>

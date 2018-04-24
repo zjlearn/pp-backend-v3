@@ -3,7 +3,8 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {ProjectService} from '../../../shared/service/ProjectService';
 import {Project} from '../../../shared/model/Project';
-
+import {MatDialog} from '@angular/material';
+import {DialogImageComponent} from '../../../shared/dialog-image/dialog-image.component';
 
 
 @Component({
@@ -17,7 +18,8 @@ export class ProjectDetailComponent implements OnInit {
   project: Project;
 
   constructor(private route: ActivatedRoute,
-              private projectService: ProjectService) {
+              private projectService: ProjectService,
+              public dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -28,5 +30,17 @@ export class ProjectDetailComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
     this.projectService.getProject(id)
       .subscribe(project => this.project = project);
+  }
+
+
+  openDialog(): void {
+    console.log('打开dialog')
+    const dialogRef = this.dialog.open(DialogImageComponent, {
+      data: {}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 }
