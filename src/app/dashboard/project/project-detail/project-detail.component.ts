@@ -1,3 +1,4 @@
+///<reference path="../../../../../node_modules/@angular/core/src/metadata/directives.d.ts"/>
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {ProjectService} from '../../../shared/service/ProjectService';
@@ -15,8 +16,7 @@ export class ProjectDetailComponent implements OnInit {
   project: Project;
 
   constructor(private route: ActivatedRoute,
-              private projectService: ProjectService,
-              private location: Location) {
+              private projectService: ProjectService) {
   }
 
   ngOnInit() {
