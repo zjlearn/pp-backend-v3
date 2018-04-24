@@ -51,7 +51,7 @@ const routes: Routes = [
       {path: 'project/tendering', component: TenderingComponent},
       {path: 'project/repay', component: RepaymentComponent},
       {path: 'project/finished', component: FinishedProjectComponent},
-      {path: 'project/detail/:id', component: ProjectDetailComponent},
+      {path: 'project/detail/:id', component: ProjectDetailComponent}
     ]
   }
 ];

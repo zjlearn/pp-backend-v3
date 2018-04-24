@@ -5,6 +5,7 @@ import {ProjectService} from '../../../shared/service/ProjectService';
 import {Project} from '../../../shared/model/Project';
 
 
+
 @Component({
   selector: 'app-project-detail',
   templateUrl: './project-detail.component.html',
