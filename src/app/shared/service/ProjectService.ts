@@ -2,8 +2,9 @@
 import {Injectable} from '@angular/core';
 import {Project} from '../model/Project';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs/Observable';
 import {Result} from '../model/Result';
+import 'rxjs/add/operator/map';
+import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class ProjectService {
@@ -18,7 +19,7 @@ export class ProjectService {
     return mockProjects;
   }
 
-  getProject(id: number) {
+  getProject(id: number): Observable<Project> {
     return this.http.get<Result>('http://localhost:4200/xhr/user/login').map<Result, Project>(ret => ret.data);
   }
 
