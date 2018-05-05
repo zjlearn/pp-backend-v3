@@ -1,0 +1,78 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">借款管理</a></li>
+    <li class="breadcrumb-item active" aria-current="page">借款申请</li>
+  </ol>
+</nav>
+
+<div class="filter-section">
+  <form class="example-container">
+    <mat-form-field class="filter">
+      <input matInput placeholder="贷款人姓名">
+    </mat-form-field>
+    <mat-form-field class="filter">
+      <input matInput placeholder="借款周期">
+    </mat-form-field>
+    <button mat-raised-button color="primary">查询</button>
+  </form>
+</div>
+
+<div class="product-table">
+  <div class="example-header">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="关键字过滤">
+    </mat-form-field>
+  </div>
+
+  <mat-table #table [dataSource]="dataSource" matSort>
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.id}}</mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="userName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>姓名</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.userName}}</mat-cell>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="amount">
+      <mat-header-cell *matHeaderCellDef>金额</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.amount}}</mat-cell>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="duration">
+      <mat-header-cell *matHeaderCellDef>借款期限</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.duration}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="createTime">
+      <mat-header-cell *matHeaderCellDef>申请时间</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.duration}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="createTime">
+      <mat-header-cell *matHeaderCellDef>借款原因</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.reason}}</mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="createTime">
+      <mat-header-cell *matHeaderCellDef>资料完整度</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.duration}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="operation">
+      <mat-header-cell *matHeaderCellDef> 操作</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <a routerLink="/dashboard/project/detail/{{element.id}}">编辑</a>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
