@@ -39,6 +39,9 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {HttpModule} from '@angular/http';
 import {DialogImageComponent} from './shared/dialog-image/dialog-image.component';
 import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialog} from '@angular/material';
+import { LoanApplyComponent } from './dashboard/project/loan-apply/loan-apply.component';
+import {LoanBillService} from './shared/service/LoanBillService';
+import { LoanEditComponent } from './dashboard/project/loan-edit/loan-edit.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +75,9 @@ import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialog} from '@angular/material';
     RepaymentComponent,
     FinishedProjectComponent,
     ProjectDetailComponent,
-    DialogImageComponent
+    DialogImageComponent,
+    LoanApplyComponent,
+    LoanEditComponent
   ],
   imports: [
     BrowserModule,
@@ -81,7 +86,7 @@ import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialog} from '@angular/material';
     MaterialModule,
   ],
   entryComponents: [DialogImageComponent],
-  providers: [SettingsService, ProjectService, HttpClient,
+  providers: [SettingsService, ProjectService, HttpClient, LoanBillService,
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}},
     MatDialog
     ],

@@ -51,18 +51,18 @@
 
     <ng-container matColumnDef="createTime">
       <mat-header-cell *matHeaderCellDef>申请时间</mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.duration}}</mat-cell>
+      <mat-cell *matCellDef="let element"> {{element.createTime}}</mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="createTime">
+    <ng-container matColumnDef="reason">
       <mat-header-cell *matHeaderCellDef>借款原因</mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.reason}}</mat-cell>
+      <mat-cell *matCellDef="let element"> {{element.remark}}</mat-cell>
     </ng-container>
 
 
-    <ng-container matColumnDef="createTime">
+    <ng-container matColumnDef="integrity">
       <mat-header-cell *matHeaderCellDef>资料完整度</mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.duration}}</mat-cell>
+      <mat-cell *matCellDef="let element"> {{element.integrity}}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="operation">

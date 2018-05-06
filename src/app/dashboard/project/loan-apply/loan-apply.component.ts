@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {Project} from '../../../shared/model/Project';
-import {ProjectService} from '../../../shared/service/ProjectService';
 import {MatSort, MatTableDataSource} from '@angular/material';
+import {LoanBill} from '../../../shared/model/LoanBill';
+import {LoanBillService} from '../../../shared/service/LoanBillService';
 
 /**
  * 对借款申请进行管理
@@ -12,17 +12,17 @@ import {MatSort, MatTableDataSource} from '@angular/material';
   styleUrls: ['./loan-apply.component.css']
 })
 export class LoanApplyComponent implements OnInit {
-  products: Project[];
-  displayedColumns = ['id', 'userName', 'amount', 'duration', 'createTime', 'reason', 'Integrity', 'operation'];
+  loanBills: LoanBill[];
+  displayedColumns = ['id', 'userName', 'amount', 'duration', 'createTime', 'reason', 'integrity', 'operation'];
   dataSource;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private  projectService: ProjectService) {
+  constructor(private  loanBillService: LoanBillService) {
   }
 
   ngOnInit() {
-    this.products = this.projectService.getProjects();
-    this.dataSource = new MatTableDataSource(this.products);
+    this.loanBills = this.loanBillService.getLoanBills();
+    this.dataSource = new MatTableDataSource(this.loanBills);
   }
 
 
