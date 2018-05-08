@@ -4,15 +4,89 @@
     <li class="breadcrumb-item active" aria-current="page">借款资料编辑</li>
   </ol>
 </nav>
-<div class="container">
-  <form class="">
-    <mat-form-field >
-      <input matInput placeholder="贷款人姓名">
-    </mat-form-field>
-    <mat-form-field >
-      <input matInput placeholder="借款周期">
-    </mat-form-field>
-    <button mat-raised-button color="primary">保存</button>
-    <button mat-raised-button color="primary">生成标</button>
-  </form>
-</div>
+
+<form>
+  <!--申请人基本信息-->
+  <div class="sec">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>申请人基本信息</mat-card-title>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3">
+              <span>姓名:</span>
+              <input type="text"  value="张军"/>
+            </div>
+            <div class="col-lg-3 ">
+              <span>电话:</span>
+              <input type="text"  value="130164136"/>
+            </div>
+            <div class="col-lg-3 ">
+              <span>身份证号:</span>
+              <input type="text"  value="411527199210145038"/>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3">
+              <span>性别:</span>
+              <input type="text"  value="男"/>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <!--申请借款标的的信息-->
+  <div class="sec">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>借款基本信息</mat-card-title>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3">
+              <span>借款金额: </span>
+              <input type="text"  value="xxxx"/>
+            </div>
+            <div class="col-lg-3">
+              <span>借款周期</span>
+              <input type="text"  value="12"/>
+            </div>
+            <div class="col-lg-3">
+              <span>借款利率</span>
+              <input type="text"  value="xxxx"/>
+            </div>
+          </div>
+          <div class="row">
+            <div class="">
+              <span>自动投标: </span>
+              <input type="text"  value="是"/>
+            </div>
+            <div class="">
+              <span>借款原因说明: </span>
+              <input type="text"  value="xxxx"/>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3">
+              <span>贷款类型: </span>
+              <input type="text"  value="信用贷"/>
+            </div>
+          </div>
+          <p>证明照片: </p>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary">保存</button>
+        <button mat-raised-button color="primary">转标</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+</form>

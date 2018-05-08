@@ -26,6 +26,7 @@ import {SecondcheckComponent} from './dashboard/project/secondcheck/secondcheck.
 import {FirstCheckComponent} from './dashboard/project/first-check/first-check.component';
 import {ProjectDetailComponent} from './dashboard/project/project-detail/project-detail.component';
 import {LoanApplyComponent} from './dashboard/project/loan-apply/loan-apply.component';
+import {LoanEditComponent} from './dashboard/project/loan-edit/loan-edit.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -46,8 +47,10 @@ const routes: Routes = [
       {path: 'processes/handled', component: HandledProcessComponent},
       {path: 'processes/end', component: EndProcessComponent},
       {path: 'processes/loan', component: LoanComponent},
+      {path: 'processes/loan', component: LoanComponent},
       {path: 'processes/project', component: ProjectComponent},
       {path: 'project/loanApply', component: LoanApplyComponent},
+      {path: 'loan/edit/:id', component: LoanEditComponent},
       {path: 'project/firstCheck', component: FirstCheckComponent},
       {path: 'project/secondCheck', component: SecondcheckComponent},
       {path: 'project/tendering', component: TenderingComponent},
