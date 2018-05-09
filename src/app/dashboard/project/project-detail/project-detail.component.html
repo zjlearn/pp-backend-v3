@@ -122,68 +122,115 @@
   </mat-card>
 </div>
 
-
-<!--申请借款标的的信息-->
 <div class="sec">
   <mat-card class="example-card">
-    <mat-card-header>
-      <mat-card-title>投资记录</mat-card-title>
-    </mat-card-header>
-    <mat-divider></mat-divider>
     <mat-card-content>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3">
-            <span>贷款类型: </span>
-            <span>信用贷</span>
-          </div>
-        </div>
-        <p>证明照片: </p>
-        <div>
-          <a (click)="openDialog()">
-            <img src="" alt="身份证">
-          </a>
-          <a (click)="openDialog()">
-            <img src="" alt="信用证明">
-          </a>
-          <a (onclick)="openDialog()">
-            <img src="学历证明">
-          </a>
-        </div>
-      </div>
+      <mat-tab-group>
+        <mat-tab label="投资记录">
+          <mat-table #table [dataSource]="investRecordDataSource" matSort>
+            <!-- Position Column -->
+            <ng-container matColumnDef="id">
+              <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.id}}</mat-cell>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="projectNo">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>项目编号</mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.projectNo}}</mat-cell>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="userName">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>姓名</mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.userName}}</mat-cell>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="amount">
+              <mat-header-cell *matHeaderCellDef>金额</mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.amount}}</mat-cell>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="duration">
+              <mat-header-cell *matHeaderCellDef>借款期限</mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.duration}}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="createTime">
+              <mat-header-cell *matHeaderCellDef>申请时间</mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.duration}}</mat-cell>
+            </ng-container>
+
+
+            <ng-container matColumnDef="operation">
+              <mat-header-cell *matHeaderCellDef> 操作</mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                <a routerLink="/dashboard/project/detail/{{element.id}}">查看</a>
+              </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </mat-table>
+        </mat-tab>
+        <mat-tab label="还款记录">
+          <mat-table #table [dataSource]="repayRecordDataSource" matSort>
+            <!-- Position Column -->
+            <ng-container matColumnDef="id">
+              <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.id}}</mat-cell>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="projectNo">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>项目编号</mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.projectNo}}</mat-cell>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="userName">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>姓名</mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.userName}}</mat-cell>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="amount">
+              <mat-header-cell *matHeaderCellDef>金额</mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.amount}}</mat-cell>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="duration">
+              <mat-header-cell *matHeaderCellDef>借款期限</mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.duration}}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="createTime">
+              <mat-header-cell *matHeaderCellDef>申请时间</mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.duration}}</mat-cell>
+            </ng-container>
+
+
+            <ng-container matColumnDef="operation">
+              <mat-header-cell *matHeaderCellDef> 操作</mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                <a routerLink="/dashboard/project/detail/{{element.id}}">查看</a>
+              </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </mat-table>
+        </mat-tab>
+      </mat-tab-group>
     </mat-card-content>
   </mat-card>
 </div>
 
 
-<!--申请借款标的的信息-->
-<div class="sec">
-  <mat-card class="example-card">
-    <mat-card-header>
-      <mat-card-title>还款记录</mat-card-title>
-    </mat-card-header>
-    <mat-divider></mat-divider>
-    <mat-card-content>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3">
-            <span>贷款类型: </span>
-            <span>信用贷</span>
-          </div>
-        </div>
-        <p>证明照片: </p>
-        <div>
-          <a (click)="openDialog()">
-            <img src="" alt="身份证">
-          </a>
-          <a (click)="openDialog()">
-            <img src="" alt="信用证明">
-          </a>
-          <a (onclick)="openDialog()">
-            <img src="学历证明">
-          </a>
-        </div>
-      </div>
-    </mat-card-content>
-  </mat-card>
-</div>
+
+
+
+

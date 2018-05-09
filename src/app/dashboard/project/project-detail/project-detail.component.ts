@@ -1,9 +1,9 @@
 ///<reference path="../../../../../node_modules/@angular/core/src/metadata/directives.d.ts"/>
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {ProjectService} from '../../../shared/service/ProjectService';
 import {Project} from '../../../shared/model/Project';
-import {MatDialog} from '@angular/material';
+import {MatDialog, MatSort, MatTableDataSource} from '@angular/material';
 import {DialogImageComponent} from '../../../shared/dialog-image/dialog-image.component';
 
 
@@ -16,6 +16,11 @@ import {DialogImageComponent} from '../../../shared/dialog-image/dialog-image.co
 export class ProjectDetailComponent implements OnInit {
 
   project: Project;
+  investDisplayedColumns = ['id', 'projectNo', 'userName', 'amount', 'duration', 'createTime', 'operation'];
+  investRecordDataSource;
+  repayRecordDataSource;
+
+  @ViewChild(MatSort) sort: MatSort;
 
   constructor(private route: ActivatedRoute,
               private projectService: ProjectService,
@@ -24,6 +29,8 @@ export class ProjectDetailComponent implements OnInit {
 
   ngOnInit() {
     this.getProject();
+    this.investRecordDataSource = new MatTableDataSource(this.project.investRecords);
+    this.repayRecordDataSource = new MatTableDataSource(this.project.repayRecords);
   }
 
   getProject(): void {
@@ -34,7 +41,7 @@ export class ProjectDetailComponent implements OnInit {
 
 
   openDialog(): void {
-    console.log('打开dialog')
+    console.log('打开dialog');
     const dialogRef = this.dialog.open(DialogImageComponent, {
       data: {}
     });
@@ -43,4 +50,10 @@ export class ProjectDetailComponent implements OnInit {
       console.log('The dialog was closed');
     });
   }
+  applyFilter(filterValue: string) {
+    filterValue = filterValue.trim(); // Remove whitespace
+    filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
+    this.investRecordDataSource.filter = filterValue;
+  }
+
 }

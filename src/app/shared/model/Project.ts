@@ -1,3 +1,6 @@
+import {InvestRecord, LoanRecord} from './LoanRecord';
+import {RepayRecord} from './RepayRecord';
+
 export class Project {
   public id: number;
   public userId: number;
@@ -17,6 +20,9 @@ export class Project {
   public remainder: number;
   public status: number;
   public createTime: number;
+
+  public investRecords: InvestRecord[];
+  public repayRecords: RepayRecord[];
 
 
   constructor(id: number, userName: String, projectName: string, projectNo: string, amount: number, duration: number, createTime: number) {
